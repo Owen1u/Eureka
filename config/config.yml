@@ -1,0 +1,20 @@
+model_name: DisorderSelfSupervised
+train_dir: '/nvme0n1/lmj/my_pro/data/chinese_document/train'
+val_dir: '/nvme0n1/lmj/my_pro/data/chinese_document/val'
+test_dir: '/nvme0n1/lmj/my_pro/data/chinese_document/test'
+model_save_dir: '/nvme0n1/lmj/Eureka/output'
+eval_interval: 300
+save_interval: 3125
+
+img_size: [3,32,128]
+batchsize: 8
+num_worker: 8   # if windows，must be 0
+epoch: 96
+seed: 2022
+device: "cuda:3"   # cpu or cuda:n
+grad_clip: 5
+optimizer: 'Adam'   # Adam/Adadelta/RMSprop
+lr: 1
+
+patch_size: [16,16] # H,W
+n_classes: 768
