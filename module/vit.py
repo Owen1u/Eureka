@@ -3,7 +3,7 @@ Descripttion:
 version: 
 Contributor: Minjun Lu
 Source: https://gitee.com/stdu-jtxy_liwx/vision-transformer.git
-LastEditTime: 2022-09-10 14:25:54
+LastEditTime: 2022-09-11 00:37:15
 '''
 
 import sys

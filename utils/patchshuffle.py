@@ -3,7 +3,7 @@ Descripttion:
 version: 
 Contributor: Minjun Lu
 Source: Original
-LastEditTime: 2022-09-10 14:23:01
+LastEditTime: 2022-09-11 11:12:52
 '''
 
 from requests import patch
@@ -46,6 +46,25 @@ class PatchShuffle():
         idxes = idxes.long()
         return images_shuffle,idxes
 
+    def decoder(self,images_shuffle,idx):
+        images = torch.zeros([self.batchsize,self.channel,self.img_h,self.img_w])
+        images_trans = images_shuffle.view(self.batchsize,self.channel,self.patch_num_h,self.patch_size[0],self.patch_num_w,self.patch_size[1])
+        images_trans =images_trans.permute(0,1,2,4,3,5)
+        images_trans = images_trans.reshape(self.batchsize,self.channel,self.patch_num,self.patch_size[0],self.patch_size[1])
+
+        for batch in range(self.batchsize):
+            img = images_trans[batch,:,:,:,:]
+            img_ = torch.zeros(img.size())
+            for i,pos in enumerate(idx[batch]):
+                img_[:,pos,:,:]=img[:,i,:,:]
+
+            img_ = img_.view(self.channel,self.patch_num_h,self.patch_num_w,self.patch_size[0],self.patch_size[1]).permute(0,1,3,2,4)
+            img_ = img_.reshape(self.channel,self.img_h,self.img_w)
+
+            images[batch,:,:,:] = img_
+
+        return images
+
     # 【todo】批量处理时，无法单独对样本随机
     def lookonepic(self,path,images_shuffle:torch.Tensor,idx,batchsize_n:int=0,isRGB=True,isSign=False):
         assert len(images_shuffle.size()) == 4,'images_shuffle:(batchsize,channel,imagesize_h,imagesize_w)'
@@ -59,10 +78,10 @@ class PatchShuffle():
         if isRGB:
             img = cv.cvtColor(img,cv.COLOR_RGB2BGR)
         if isSign:
-            img = self.sign(img,idx[batchsize_n])
+            img = self._sign(img,idx[batchsize_n])
         cv.imwrite(path,img)
 
-    def sign(self,image,idx:torch.Tensor):
+    def _sign(self,image,idx:torch.Tensor):
         n=0
         for i in range(image.shape[0]//self.patch_size[0]):
             for j in range (image.shape[1]//self.patch_size[1]):

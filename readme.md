@@ -16,7 +16,7 @@ Eureka: A Toolkit for Piling up Building Blocks at Sweet Will
     </a>
     <a href=""><img src="https://img.shields.io/badge/version-v0.0.1-red" alt="Version"></a>
     <a href=""><img src="https://img.shields.io/github/license/Owen1u/Eureka?style=plastic" alt="license"></a>
-    <a href=""><img src="https://img.shields.io/github/watchers/Owen1u/Eureka?style=social" alt="license"></a>
+    <a href=""><img src="https://img.shields.io/github/stars/Owen1u/Eureka?style=social" alt="social"></a>
 </div>
 
 <!-- TOC -->
@@ -34,6 +34,7 @@ Eureka: A Toolkit for Piling up Building Blocks at Sweet Will
             - [FAN](#fan)
             - [Resnet](#resnet)
             - [SwinTransformer](#swintransformer)
+            - [Transformer](#transformer)
         - [Dataset](#dataset)
             - [lmdbDataset](#lmdbdataset)
         - [Utils](#utils)
@@ -154,6 +155,9 @@ x可为18，34，50，101，152。 <br/>
 x可为t，s，b，l。<br/>
 输入图像尺寸为[b,3,224,224],输出为[b,hidden,7]。 <br/>
 也可使用**SwinTransformer**自定义层数，详见[swintransformer.py](module/swintransformer.py)
+#### [Transformer](module/transformer.py)
+> **Encoder** (embed_size=768, num_heads=8, dropout=0.1, expend=4, num_layers=6)<br/>
+> **Decoder** (embed_size=768, num_heads=8, dropout=0.1, expend=4, num_layers=6)<br/>
 
 ### Dataset
 #### [lmdbDataset](dataset/lmdb_dataset.py)
@@ -182,9 +186,14 @@ x可为t，s，b，l。<br/>
     > Input: *images*可为 [ch,h,w] 或 [b,ch,h,w]<br/>
     > Output: *images_shuffle*: [b,ch,h,w] , *idx*: [b,patch_num]<br/>
   
+  * decoder (images_shuffle,idx): 根据idx恢复乱序。<br/>
+    > Input: *images_shuffle*:[b,ch,h,w], *idx*: [b,patch_num]<br/>
+    > Output: *images*: [b,ch,h,w]
+  
   * lookonepic ([path],images_shuffle:Tensor,idx,batchsize_n:int=0,isRGB=True,isSign=False): 将batchsize中第n张图保存在path路径下,用于调试。<br/>
     > Input: *images_shuffle*: [b,ch,h,w]；*isSign*为真时会将patch编号写在图片上；OpenCV读入的图片需将*isRGB*设为False。<br/>
     > Output: *None*<br/>
+
     
 ### Output
 ------
@@ -200,4 +209,6 @@ x可为t，s，b，l。<br/>
 ### V0.0.1
 1. 修正Config类的用法。可通过键值获取参数文件的数据；将seed功能归并到Config类下。
 2. Utils增加 PatchShuffle。
-3. Module增加 VisionTransformer, FAN, Resnet, SwinTransformer。
+3. Module增加 VisionTransformer, FAN, Resnet, SwinTransformer, TransformerEncoder, TransformerDecoder。 
+4. 新增 PatchShuffle.decoder,用于恢复patch乱序。
+5. Utils新增initialize，尚在构思调试，未投入使用。
