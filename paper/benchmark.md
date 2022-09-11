@@ -4,3 +4,5 @@ Benchmark for Novel Models
 ### Object Detection
 ### Image Classification
 ### Semantic Segmentation
+
+## Natural Language Processing
