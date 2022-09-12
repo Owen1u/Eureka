@@ -18,34 +18,38 @@ Eureka: A Toolkit for Piling up Building Blocks at Sweet Will
     <a href=""><img src="https://img.shields.io/github/license/Owen1u/Eureka?style=plastic" alt="license"></a>
     <a href=""><img src="https://img.shields.io/github/stars/Owen1u/Eureka?style=social" alt="social"></a>
 </div>
+<div align="center"><a href="https://github.com/Owen1u/Eureka/paper"><img height='' width='300' src="https://img.shields.io/badge/前沿模型精选%26主流数据集汇总-EF9421?style=for-the-badge&logo=codereview&logoColor=white&label=Review"></a></div>
 
 <!-- TOC -->
 
 - [Eureka: A Toolkit for Piling up Building Blocks at Sweet Will](#eureka-a-toolkit-for-piling-up-building-blocks-at-sweet-will)
-    - [Usage](#usage)
-        - [Getting Started](#getting-started)
-        - [Do It Yourself](#do-it-yourself)
-    - [Catalogue](#catalogue)
-        - [Config](#config)
-            - [Config](#config)
-            - [config.yaml](#configyaml)
-        - [Module](#module)
-            - [VisionTransformer](#visiontransformer)
-            - [FAN](#fan)
-            - [Resnet](#resnet)
-            - [SwinTransformer](#swintransformer)
-            - [Transformer](#transformer)
-        - [Dataset](#dataset)
-            - [lmdbDataset](#lmdbdataset)
-        - [Utils](#utils)
-            - [Counter](#counter)
-            - [PatchShuffle](#patchshuffle)
-        - [Output](#output)
-    - [Extension](#extension)
-    - [Version Description](#version-description)
-        - [V0.0.1](#v001)
+  - [Usage](#usage)
+    - [Getting Started](#getting-started)
+    - [Do It Yourself](#do-it-yourself)
+  - [Catalogue](#catalogue)
+    - [Config](#config)
+      - [Config](#config-1)
+      - [config.yaml](#configyaml)
+    - [Module](#module)
+      - [VisionTransformer](#visiontransformer)
+      - [FAN](#fan)
+      - [Resnet](#resnet)
+      - [SwinTransformer](#swintransformer)
+      - [Transformer](#transformer)
+    - [Dataset](#dataset)
+      - [lmdbDataset](#lmdbdataset)
+    - [Utils](#utils)
+      - [Counter](#counter)
+      - [PatchShuffle](#patchshuffle)
+  - [### Output](#-output)
+  - [Extension](#extension)
+  - [6. 更新readme.md说明文档。](#6-更新readmemd说明文档)
+  - [Version Description](#version-description)
+    - [V0.0.1](#v001)
 
 <!-- /TOC -->
+
+
 -------
 ## Usage
 ### Getting Started
