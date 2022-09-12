@@ -18,7 +18,7 @@ Eureka: A Toolkit for Piling up Building Blocks at Sweet Will
     <a href=""><img src="https://img.shields.io/github/license/Owen1u/Eureka?style=plastic" alt="license"></a>
     <a href=""><img src="https://img.shields.io/github/stars/Owen1u/Eureka?style=social" alt="social"></a>
 </div>
-<div align="center"><a href="https://github.com/Owen1u/Eureka/paper"><img height='' width='300' src="https://img.shields.io/badge/前沿模型精选%26主流数据集汇总-EF9421?style=for-the-badge&logo=codereview&logoColor=white&label=Review"></a></div>
+<div align="center"><a href="https://github.com/Owen1u/Eureka/tree/main/paper"><img height='' width='300' src="https://img.shields.io/badge/前沿模型精选%26主流数据集汇总-EF9421?style=for-the-badge&logo=codereview&logoColor=white&label=Review"></a></div>
 
 <!-- TOC -->
 
