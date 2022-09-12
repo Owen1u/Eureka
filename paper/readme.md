@@ -34,6 +34,11 @@ Review of Novel Models & Benchmark Datasets
   - 文档文本识别
   - 中文识别
 ### 交通标志识别 (Traffic Sign Recognition)
+|数据集|年份|机构|真实/合成|国家/地区|图片数量|像素分辨率|类别|样本数量|论文链接|下载链接|
+| :----: | :----: | :----: | :----: | :----: | :----: | :----: | :----: | :----: | :----: | :----: |
+|TT100K|2016/2021|清华、腾讯|real-world|中国|100K|2048*2048||30K|[论文](https://openaccess.thecvf.com/content_cvpr_2016/papers/Zhu_Traffic-Sign_Detection_and_CVPR_2016_paper.pdf)|[点击下载](http://cg.cs.tsinghua.edu.cn/traffic-sign/)|
+|CCTSDB|2017|长沙理工大学|real-world|中国|15.7K|1000*350||-|[论文](https://www.mdpi.com/1999-4893/10/4/127/htm)|[点击下载](https://github.com/csust7zhangjm/CCTSDB)|
+|GTSRB|2012|波鸿鲁尔大学、哥本哈根大学|real-world|德国|50K|1360*1024|43|-|[论文](https://doi.org/10.1016/j.neunet.2012.02.016)|[点击下载](https://benchmark.ini.rub.de/gtsrb_news.html)
 
 ---
 ## 自然语言处理 (Natural Language Processing)
