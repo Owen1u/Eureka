@@ -6,3 +6,6 @@ Benchmark for Novel Models
 ### Semantic Segmentation
 
 ## Natural Language Processing
+### Language Modeling
+### Question Answering
+### Machine Translation
