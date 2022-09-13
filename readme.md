@@ -173,7 +173,7 @@ x可为t，s，b，l。<br/>
 #### [Counter](utils/counter.py)
 计数器，用于求每个周期的平均loss（主要给开发者看的）
   * init( )
-  * add (value:Tenor)
+  * add (value:Tensor)
     > Input: [loss] <br/>
     > Output: *None* <br/>
   * reset ( )
