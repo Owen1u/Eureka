@@ -13,6 +13,7 @@ Review of Novel Models & Benchmark Datasets
     - [语义分割 (Semantic Segmentation)](#语义分割-semantic-segmentation)
     - [文本识别 (Text Spotting)](#文本识别-text-spotting)
     - [交通标志识别 (Traffic Sign Recognition)](#交通标志识别-traffic-sign-recognition)
+  - [|BelgiumTS|2013|-|real-world|比利时|4.5K+2.5K||62|参考论文|[点击下载](https://btsd.ethz.ch/shareddata/)|](#belgiumts2013-real-world比利时45k25k62参考论文点击下载)
   - [自然语言处理 (Natural Language Processing)](#自然语言处理-natural-language-processing)
     - [语言模型 (Language Modelling)](#语言模型-language-modelling)
     - [命名实体识别 (Named( Entity Recognition)](#命名实体识别-named-entity-recognition)
@@ -37,9 +38,10 @@ Review of Novel Models & Benchmark Datasets
 |数据集|年份|机构|真实/合成|国家/地区|图片数量|像素分辨率|类别|论文链接|下载链接|
 | :----: | :----: | :----: | :----: | :----: | :----: | :----: | :----: | :----: | :----: |
 |TT100K|2016/2021|清华、腾讯|real-world|中国|100K|2048*2048|182/232|[论文](https://openaccess.thecvf.com/content_cvpr_2016/papers/Zhu_Traffic-Sign_Detection_and_CVPR_2016_paper.pdf)|[点击下载](http://cg.cs.tsinghua.edu.cn/traffic-sign/)|
+|Mapillary Traffic Sign Dataset|2020|mapillary|real-world|全球|52K(fully-annotated)+48K(partially-annotated)|-|313|[论文](https://arxiv.org/pdf/1909.04422.pdf)|[点击下载](www.mapillary.com/dataset/trafficsign)|
 |CCTSDB|2017|长沙理工大学|real-world|中国|15.7K|1000*350|3|[论文](https://www.mdpi.com/1999-4893/10/4/127/htm)|[点击下载](https://github.com/csust7zhangjm/CCTSDB)|
 |GTSRB|2012|波鸿鲁尔大学、哥本哈根大学|real-world|德国|50K|1360*1024|43|[论文](https://doi.org/10.1016/j.neunet.2012.02.016)|[点击下载](https://benchmark.ini.rub.de/gtsrb_news.html)
-
+|BelgiumTS|2013|-|real-world|比利时|4.5K+2.5K||62|[参考论文](https://people.ee.ethz.ch/~timofter/publications/Mathias-IJCNN-2013.pdf)|[点击下载](https://btsd.ethz.ch/shareddata/)|
 ---
 ## 自然语言处理 (Natural Language Processing)
 ### 语言模型 (Language Modelling)
