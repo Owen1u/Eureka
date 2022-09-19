@@ -53,11 +53,11 @@ Review of Novel Models & Benchmark Datasets
 |数据集|年份|机构|真实/合成|国家/地区|图片数量|像素分辨率|类别|论文链接|下载链接|
 | :----: | :----: | :----: | :----: | :----: | :----: | :----: | :----: | :----: | :----: |
 |TT100K|2016<br/>2021|清华大学<br/>腾讯|real-world|中国|100K|2048*2048|182<br/>232|[论文](https://openaccess.thecvf.com/content_cvpr_2016/papers/Zhu_Traffic-Sign_Detection_and_CVPR_2016_paper.pdf)|[点击下载](http://cg.cs.tsinghua.edu.cn/traffic-sign/)|
-|Mapillary Traffic<br/>Sign Dataset|2020|Mapillary|real-world|全球|52K(fully-annotated)<br/>48K(partially-annotated)|-|313|[论文](https://arxiv.org/pdf/1909.04422.pdf)|[点击下载](www.mapillary.com/dataset/trafficsign)|
+|Mapillary Traffic<br/>Sign Dataset|2020|Mapillary|real-world|全球|52K:fully-annotated<br/>48K:partially-annotated|-|313|[论文](https://arxiv.org/pdf/1909.04422.pdf)|[点击下载](www.mapillary.com/dataset/trafficsign)|
 |CCTSDB|2017|长沙理工大学|real-world|中国|15.7K|1000*350|3|[论文](https://www.mdpi.com/1999-4893/10/4/127/htm)|[点击下载](https://github.com/csust7zhangjm/CCTSDB)|
 |KUL Belgium<br/>Traffic Sign dataset|2013|苏黎世联邦理工大学|real-world|比利时|145K|1628*1236||[论文](https://btsd.ethz.ch/shareddata/publications/Timofte-MVA-2011-preprint.pdf)|[点击下载](http://people.ee.ethz.ch/~timofter/traffic_signs/)|
 |GTSRB|2012|波鸿鲁尔大学<br/>哥本哈根大学|real-world|德国|50K|1360*1024|43|[论文](https://doi.org/10.1016/j.neunet.2012.02.016)|[点击下载](https://benchmark.ini.rub.de/gtsrb_news.html)
-|BelgiumTS|2013|-|real-world|比利时|4.5K+2.5K|200*200以下<br/>(only for recognition)|62|[参考论文](https://people.ee.ethz.ch/~timofter/publications/Mathias-IJCNN-2013.pdf)|[点击下载](https://btsd.ethz.ch/shareddata/)|
+|BelgiumTS|2013|-|real-world|比利时|4.5K+2.5K|200*200以下<br/>only for recognition|62|[参考论文](https://people.ee.ethz.ch/~timofter/publications/Mathias-IJCNN-2013.pdf)|[点击下载](https://btsd.ethz.ch/shareddata/)|
 
 **<br/><center>信号灯</center>**
 |数据集|年份|机构|真实/合成|国家/地区|图片数量|像素分辨率|类别|论文链接|下载链接|
