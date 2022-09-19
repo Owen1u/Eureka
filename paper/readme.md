@@ -62,8 +62,8 @@ Review of Novel Models & Benchmark Datasets
 **<br/><center>信号灯</center>**
 |数据集|年份|机构|真实/合成|国家/地区|图片数量|像素分辨率|类别|论文链接|下载链接|
 | :----: | :----: | :----: | :----: | :----: | :----: | :----: | :----: | :----: | :----: |
-|DriveU Traffic Light Datase|2018|乌尔姆大学|real-world|德国|232K|2048*1024|344|[论文](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8460737)|[点击下载](https://www.uni-ulm.de/in/iui-drive-u/projekte/driveu-traffic-light-dataset/registrierungsformular-dtld/)|
-|Bosch Small Traffic Lights|2017|Bosch|real-world|旧金山湾区|13.4K|1280*720|15(按颜色)|[论文](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=7989163)|[点击下载](https://hci.iwr.uni-heidelberg.de/content/bosch-small-traffic-lights-dataset)|
+|DriveU Traffic<br/>Light Datase|2018|乌尔姆大学|real-world|德国|232K|2048*1024|344|[论文](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8460737)|[点击下载](https://www.uni-ulm.de/in/iui-drive-u/projekte/driveu-traffic-light-dataset/registrierungsformular-dtld/)|
+|Bosch Small<br/>Traffic Lights|2017|Bosch|real-world|旧金山湾区|13.4K|1280*720|15(按颜色)|[论文](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=7989163)|[点击下载](https://hci.iwr.uni-heidelberg.de/content/bosch-small-traffic-lights-dataset)|
 
 ---
 ## 自然语言处理 (Natural Language Processing)
