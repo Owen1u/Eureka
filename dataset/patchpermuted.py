@@ -3,12 +3,14 @@ Descripttion:
 version: 
 Contributor: Minjun Lu
 Source: Original
-LastEditTime: 2023-07-20 20:54:28
+LastEditTime: 2023-07-20 23:14:26
 '''
 
+import sys
+sys.path.append('./')
 import torch
 import random
-from Eureka.dataset.base import ImageDataset
+from dataset.base import ImageDataset
 from torchvision import transforms
 from collections.abc import Iterable
 
