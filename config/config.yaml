@@ -1,0 +1,39 @@
+# template
+model_name: 
+model_save_dir: ./output
+
+image_pretrained: 
+pretrained: 
+probe: False
+
+seed: 2023
+epoch: 100
+eval_epoch: 1
+save_epoch: 1
+eval_interval: 
+save_interval: 
+
+grad_clip: 5
+lr_scheduler: 'cosine'
+lr_f: 0.0002
+lr_min: 0.00001
+multiplier: 1
+warmup_epoch: 1
+warmup: 'linear'
+optimizer: 'AdamW'   # Adam/Adadelta/RMSprop
+
+loss: ['ce','mse'] # ctc/ce/mse
+
+num_train_sample:
+data_aug: True
+img_size: [3,224,224]
+batchsize: 16
+num_worker: 8   # if windows，must be 0
+
+patch_size: [16,16] # H,W
+depth: 12
+heads: 12
+dim: 768
+mlp_dim: 3072
+num_classes: 512
+
