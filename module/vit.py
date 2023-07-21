@@ -3,7 +3,7 @@ Descripttion:
 version: 
 Contributor: Minjun Lu
 Source: Original
-LastEditTime: 2023-07-21 19:43:52
+LastEditTime: 2023-07-21 20:23:25
 '''
 from functools import partial
 from typing import Callable, List, Optional,Iterable
@@ -11,8 +11,53 @@ from collections import OrderedDict
 import torch
 import torch.nn as nn
 import math
-from torchvision.models.vision_transformer import Encoder,ConvStemConfig,ConvNormActivation
-    
+from torchvision.models.vision_transformer import EncoderBlock,ConvStemConfig,ConvNormActivation
+
+class Encoder(nn.Module):
+    """Transformer Model Encoder for sequence to sequence translation."""
+
+    def __init__(
+        self,
+        seq_length: int,
+        num_layers: int,
+        num_heads: int,
+        hidden_dim: int,
+        mlp_dim: int,
+        dropout: float,
+        attention_dropout: float,
+        norm_layer: Callable[..., torch.nn.Module] = partial(nn.LayerNorm, eps=1e-6),
+        pos_embedding: torch.Tensor=None
+    ):
+        super().__init__()
+        # Note that batch_size is on the first dim because
+        # we have batch_first=True in nn.MultiAttention() by default
+        
+        if pos_embedding is not None:
+            assert pos_embedding.size()==torch.Size([1,seq_length,hidden_dim]),'the size of pos_embedding should be {}'.format(torch.Size([1,seq_length,hidden_dim]))
+            self.pos_embedding = pos_embedding
+            
+        else:
+            self.pos_embedding = nn.Parameter(torch.empty(1, seq_length, hidden_dim).normal_(std=0.02))  # from BERT
+
+        self.dropout = nn.Dropout(dropout)
+        layers: OrderedDict[str, nn.Module] = OrderedDict()
+        for i in range(num_layers):
+            layers[f"encoder_layer_{i}"] = EncoderBlock(
+                num_heads,
+                hidden_dim,
+                mlp_dim,
+                dropout,
+                attention_dropout,
+                norm_layer,
+            )
+        self.layers = nn.Sequential(layers)
+        self.ln = norm_layer(hidden_dim)
+
+    def forward(self, input: torch.Tensor):
+        torch._assert(input.dim() == 3, f"Expected (batch_size, seq_length, hidden_dim) got {input.shape}")
+        input = input + self.pos_embedding
+        return self.ln(self.layers(self.dropout(input)))
+
 class ViTAnysize(nn.Module):
     def __init__(
         self, 
@@ -28,9 +73,9 @@ class ViTAnysize(nn.Module):
         representation_size: int = None, 
         norm_layer: Callable[..., torch.nn.Module] = partial(nn.LayerNorm, eps=1e-6), 
         conv_stem_configs: Optional[List[ConvStemConfig]] = None,
-        classification: bool = True):
+        classification: bool = True,
+        pos_embedding: torch.Tensor=None):
         super().__init__()
-        
         
 
         torch._assert(image_size[-1] % patch_size[-1] == 0 and image_size[-2] % patch_size[-2] == 0, "Input shape indivisible by patch size!")
@@ -86,6 +131,7 @@ class ViTAnysize(nn.Module):
             dropout,
             attention_dropout,
             norm_layer,
+            pos_embedding,
         )
         self.seq_length = seq_length
 
@@ -164,15 +210,16 @@ class ViTAnysize(nn.Module):
 
 if __name__=='__main__':
     model = ViTAnysize(
-                    image_size=[3,608,1088],
+                    image_size=[3,224,224],
                     patch_size=[16,32],
                     num_layers=12,
                     num_heads=12,
                     hidden_dim=768,
                     mlp_dim=3072,
                     classification=False,
-                    num_classes = 512
+                    num_classes = 512,
+                    pos_embedding= None
                 )
-    x = torch.randn([8,3,608,1088])
+    x = torch.randn([8,3,224,224])
     y = model(x)
     print(y.size())
